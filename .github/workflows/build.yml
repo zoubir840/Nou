@@ -1,0 +1,25 @@
+name: "Fap Compiler"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v3
+
+      - name: Compilation avec ufbt
+        uses: flipperdevices/flipperzero-ufbt-action@v0.1.2
+        id: build-app
+        with:
+          sdk-channel: release 
+
+      - name: Sauvegarde du fichier .fap
+        uses: actions/upload-artifact@v3
+        with:
+          name: mon-application-compilee
+          path: dist/*.fap 
