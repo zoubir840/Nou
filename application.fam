@@ -1,0 +1,15 @@
+App(
+    appid="omnitool_unleashed",
+    name="OmniTool Ultimate",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="omnitool_app",
+    cdefines=["APP_OMNITOOL"],
+    requires=[
+        "gui",
+    ],
+    stack_size=4 * 1024,
+    order=10,
+    fap_category="Tools",
+    fap_author="Community",
+    fap_description="Structure de base OmniTool - Interface ViewDispatcher",
+)
